@@ -1,0 +1,70 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+
+public class PlayerCollisionFirstTrap : MonoBehaviour
+{
+    public Material FirstTrapCollisionEnterMaterial;
+    public Material ActivateTrapAfterCollision;
+    public Material SetDamageToThePlayer;
+
+    private Collider planeCollider;
+
+
+    void OnTriggerEnter(Collider objectName)
+    {
+        //Debug.Log(FirstTrapCollisionEnterMaterial.name);
+
+        //Debug.Log("Entered collision with " + objectName.gameObject.name);
+
+        //https://stackoverflow.com/questions/65455308/how-to-get-all-the-materials-assigned-to-a-gameobject-in-unity#:~:text=In%20Unity%2C%20we%20can%20get,get%20one%20material%20per%20GameObject.
+        // Находим имя материала который прикреплён к объекту
+        //Debug.Log(objectName.GetComponent<Renderer>().material.name);
+
+
+        //Сравниваем сходяться ли имена материалов обработанного в коллизии материала с искомым материалом ловушки 
+        // Так мы определяем попал ли объект на ловушку
+        if (objectName.GetComponent<Renderer>().material.name.ToString().Contains(FirstTrapCollisionEnterMaterial.name) 
+            == true)
+        {
+            //Debug.Log("String True");
+
+            //Поле на которое наступил игрок загорается ораньжевым цветом
+            //objectName.GetComponent<Renderer>().material = ActivateTrapAfterCollision;
+
+            //Для работы с нумератором создаём переменную коллайдер и присваеваем ей значение коллайдера в котором сработал тригер
+            planeCollider = objectName;
+
+            
+            //Наносим Урон Игроку
+            StartCoroutine(CreateDamageToThePlayer());
+            //    objectName.GetComponent<Renderer>().material = SetDamageToThePlayer;
+
+            //Сбрасываем ловушку в начальные значения
+           // SetTrapToDefault();
+        }
+
+        //Меняем цвет клетки при переходи объекта на клетку.
+        //objectName.gameObject.GetComponent<MeshRenderer>().material = Material1;
+    }
+
+    //Нумератор который отвечает за нанесение урона игроку
+    private IEnumerator CreateDamageToThePlayer()
+    {
+        //Поле на которое наступил игрок загорается ораньжевым цветом
+        planeCollider.GetComponent<Renderer>().material = ActivateTrapAfterCollision;
+        yield return new WaitForSeconds(1f);
+        planeCollider.GetComponent<Renderer>().material = SetDamageToThePlayer;
+        yield return new WaitForSeconds(0.6f);
+        planeCollider.GetComponent<Renderer>().material = FirstTrapCollisionEnterMaterial;
+    }
+
+    private IEnumerator SetTrapToDefault()
+    {
+        yield return new WaitForSeconds(5f);
+        planeCollider.GetComponent<Renderer>().material = FirstTrapCollisionEnterMaterial;
+    }
+
+
+}

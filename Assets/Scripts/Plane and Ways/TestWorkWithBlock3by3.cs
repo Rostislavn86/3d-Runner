@@ -8,6 +8,8 @@ public class TestWorkWithBlock3by3 : MonoBehaviour
 {
     public GameObject obj;
     public Material Material1;
+    public Material WindTrap;
+    public Material ThirdTrap;
 
     // Массив компонентов которые мы нашли с помпощью GetComponentsInChildren
     private Component[] hingeJoints;
@@ -36,8 +38,21 @@ public class TestWorkWithBlock3by3 : MonoBehaviour
                 k = 0;
             }
             // Случайно отрисовываем ловушки
-            if (k == Random.Range(4,8))
-            hingeJoints[i].GetComponent<MeshRenderer>().material = Material1;
+            if (k == Random.Range(4, 8))
+            {
+                hingeJoints[i].GetComponent<MeshRenderer>().material = Material1;
+            }
+            // Случайно отрисовываем ловушки
+            if (k == Random.Range(4, 8))
+            {
+                hingeJoints[i].GetComponent<MeshRenderer>().material = WindTrap;
+            }
+            // Случайно отрисовываем ловушки
+            if (k == Random.Range(4, 8))
+            {
+                hingeJoints[i].GetComponent<MeshRenderer>().material = ThirdTrap;
+            }
+
         }
         
     }

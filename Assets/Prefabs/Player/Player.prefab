@@ -14,7 +14,11 @@ GameObject:
   - component: {fileID: 5786603558218508426}
   - component: {fileID: 4498245639907298376}
   - component: {fileID: 1462851386244185315}
-  - component: {fileID: 5508524789978676608}
+  - component: {fileID: 1508278194668452439}
+  - component: {fileID: 361278442282742863}
+  - component: {fileID: 645130319222661045}
+  - component: {fileID: 4910635870118535908}
+  - component: {fileID: 2239163545438326520}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -151,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 15
---- !u!114 &5508524789978676608
+--- !u!114 &1508278194668452439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,9 +164,74 @@ MonoBehaviour:
   m_GameObject: {fileID: 29309666177845767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739807f38e856dc44ba3a7e2f5f08e36, type: 3}
+  m_Script: {fileID: 11500000, guid: 39f4281172a4706439498e382d26f538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FirstTrapCollisionEnterMaterial: {fileID: 2100000, guid: 3c0fb22c7be493346ac2cf7684a2c8e2, type: 2}
+  ActivateTrapAfterCollision: {fileID: 2100000, guid: 42937e5395fb0674aafcbdf067a40e72, type: 2}
+  SetDamageToThePlayer: {fileID: 2100000, guid: fab6b9f0b82f16640b2ed96e5b2ae8c8, type: 2}
+  ReloadTrap: {fileID: 2100000, guid: f8fe4819bd625e54c8260f63adb89423, type: 2}
+--- !u!114 &361278442282742863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29309666177845767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76682c8f62e9ff4cb3c3390c97345d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WindTrap: {fileID: 2100000, guid: c801972a3c8704e4caea17d888b7eb52, type: 2}
+  WindTrapAfterCollision: {fileID: 2100000, guid: 8977ad19227a21d48a6fee142cba22eb, type: 2}
+  windForce: 100
+  randomFromForceToTheDifferentWays: 0
+--- !u!114 &645130319222661045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29309666177845767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45aa7b0c04698141ab2b7b974c4b03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThirdTrap: {fileID: 2100000, guid: 4acd09d0e8826344591e95e25cc44e18, type: 2}
+  ThirdTrapAfterCollision: {fileID: 2100000, guid: 50dfad8809c66694e83ee1e8373a3f63, type: 2}
+  ThirdTrapDamage: {fileID: 2100000, guid: 5a04bfbec6270f645975985246b919da, type: 2}
+  teleportPoint: {x: 40, y: 3.5, z: 27}
+--- !u!114 &4910635870118535908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29309666177845767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc7031493f9cdb40ae450e7a6bdd122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+--- !u!114 &2239163545438326520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29309666177845767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8514160e46c531248a1927321e675a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 150
+  currentHealth: 0
+  healthBar: {fileID: 0}
+  SetDamageToThePlayer: {fileID: 2100000, guid: fab6b9f0b82f16640b2ed96e5b2ae8c8, type: 2}
 --- !u!1 &7681860339010807083
 GameObject:
   m_ObjectHideFlags: 0
