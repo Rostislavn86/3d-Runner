@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     {
         if (timeOn == false)
         {
-        
+            StopTimer();
         }
         if (timeOn == true)
         {
@@ -62,6 +62,14 @@ public class Timer : MonoBehaviour
     void StartTimer()
     {
         elaspedTime += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(elaspedTime / 60);
+        int seconds = Mathf.FloorToInt(elaspedTime % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void StopTimer()
+    {
+        elaspedTime += 0;
         int minutes = Mathf.FloorToInt(elaspedTime / 60);
         int seconds = Mathf.FloorToInt(elaspedTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
