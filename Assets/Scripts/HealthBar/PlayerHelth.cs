@@ -13,6 +13,7 @@ public class PlayerHelth : MonoBehaviour
 
     public Material SetDamageToThePlayer;
 
+    public GameObject winPanel;
     public GameObject losePanel;
 
     void OnTriggerStay(Collider objectName)
@@ -36,7 +37,9 @@ public class PlayerHelth : MonoBehaviour
         if (currentHealth <= 0)
         {
             losePanel.SetActive(true);
-            //Debug.Log("LOST");
+            winPanel.SetActive(false);
+            // Ставим игру на паузу
+            Time.timeScale = 0.0f;
         }
     }
 

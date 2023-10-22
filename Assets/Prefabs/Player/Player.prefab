@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
+  winPanel: {fileID: 0}
 --- !u!114 &2239163545438326520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   SetDamageToThePlayer: {fileID: 2100000, guid: fab6b9f0b82f16640b2ed96e5b2ae8c8, type: 2}
+  losePanel: {fileID: 0}
 --- !u!1 &7681860339010807083
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,13 +260,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7681860339010807083}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2843696, y: -0, z: -0, w: 0.9587147}
-  m_LocalPosition: {x: -1.4000003, y: 18.8, z: -12.5}
+  m_LocalRotation: {x: 0.27222076, y: -0, z: -0, w: 0.96223485}
+  m_LocalPosition: {x: -0.37, y: 17.25, z: -13.46}
   m_LocalScale: {x: 0.33333334, y: 1.0087001, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3376676260365737180}
-  m_LocalEulerAnglesHint: {x: 33.042, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.593, y: 0, z: 0}
 --- !u!20 &7382183555892831948
 Camera:
   m_ObjectHideFlags: 0

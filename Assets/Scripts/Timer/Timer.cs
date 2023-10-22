@@ -9,9 +9,11 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     float elaspedTime;
 
-    bool timeOn = false;
+    public bool timeOn = false;
 
     public GameObject winPanel;
+
+    public GameObject losePanel;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +21,12 @@ public class Timer : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+
+
+
         if (timeOn == false)
         {
             StopTimer();
@@ -56,6 +61,10 @@ public class Timer : MonoBehaviour
             timeOn = false;
 
             winPanel.SetActive(true);
+            losePanel.SetActive(false);
+
+            // Ставим игру на паузу
+            Time.timeScale = 0.0f;
         }
     }
 
