@@ -55,7 +55,7 @@ public class PlayerCollsionSecondTrap : MonoBehaviour
 
     void OnTriggerEnter(Collider objectName)
     {
-
+        /*
         //https://stackoverflow.com/questions/65455308/how-to-get-all-the-materials-assigned-to-a-gameobject-in-unity#:~:text=In%20Unity%2C%20we%20can%20get,get%20one%20material%20per%20GameObject.
         // Находим имя материала который прикреплён к объекту
 
@@ -69,11 +69,20 @@ public class PlayerCollsionSecondTrap : MonoBehaviour
 
             windZone = true;
         }
+        */
+
+        //Сравниваем по тегу - попали ли мы в ловушку 
+        if (objectName.tag == "SecondTrap")
+        {
+            objectName.GetComponent<Renderer>().material = WindTrapAfterCollision;
+
+            windZone = true;
+        }
     }
 
     void OnTriggerExit(Collider objectName)
     {
-
+        /*
         //https://stackoverflow.com/questions/65455308/how-to-get-all-the-materials-assigned-to-a-gameobject-in-unity#:~:text=In%20Unity%2C%20we%20can%20get,get%20one%20material%20per%20GameObject.
         // Находим имя материала который прикреплён к объекту
         //Debug.Log(objectName.GetComponent<Renderer>().material.name);
@@ -87,6 +96,16 @@ public class PlayerCollsionSecondTrap : MonoBehaviour
 
             windZone = false;
         }
+        */
+
+        //Сравниваем по тегу - попали ли мы в ловушку 
+        if (objectName.tag == "SecondTrap")
+        {
+            objectName.GetComponent<Renderer>().material = WindTrap;
+
+            windZone = false;
+        }
+
     }
 
     private void ForceToTheDifferentWays()

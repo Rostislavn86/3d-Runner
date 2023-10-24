@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Finish Point
+  - FirstTrap
+  - SecondTrap
+  - ThirdTrap
   layers:
   - Default
   - TransparentFX

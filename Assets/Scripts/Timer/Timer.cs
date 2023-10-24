@@ -24,9 +24,6 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-
-
-
         if (timeOn == false)
         {
             StopTimer();
@@ -36,8 +33,6 @@ public class Timer : MonoBehaviour
             StartTimer();
          
         }
-        
-
     }
 
     void OnTriggerEnter(Collider objectName)
@@ -46,18 +41,12 @@ public class Timer : MonoBehaviour
             == true)
 
         {
-         //     Debug.Log(objectName.GetComponent<Renderer>().material.name);
-         //     Debug.Log("StartPointMaterial");
-
             timeOn = true;
         }
 
         if (objectName.tag == "Finish Point")
 
         {
-            //     Debug.Log(objectName.GetComponent<Renderer>().material.name);
-            //     Debug.Log("StartPointMaterial");
-
             timeOn = false;
 
             winPanel.SetActive(true);

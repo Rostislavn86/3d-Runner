@@ -25,15 +25,13 @@ public class PlayerCollisionThirdTrap : MonoBehaviour
 
             this.transform.position = teleportPoint;
 
-        }
-
-        
+        }     
     }
     
 
     void OnTriggerEnter(Collider objectName)
     {
-
+        /*
         //https://stackoverflow.com/questions/65455308/how-to-get-all-the-materials-assigned-to-a-gameobject-in-unity#:~:text=In%20Unity%2C%20we%20can%20get,get%20one%20material%20per%20GameObject.
         // Находим имя материала который прикреплён к объекту
 
@@ -47,11 +45,20 @@ public class PlayerCollisionThirdTrap : MonoBehaviour
             //Подсвечиваем плиту в соответсвиис условием
             StartCoroutine(CreateDamageToThePlayer(objectName));
         }
+        */
+
+        //Сравниваем по тегу - попали ли мы в ловушку 
+        if (objectName.tag == "ThirdTrap")
+        {
+            //Подсвечиваем плиту в соответсвиис условием
+            StartCoroutine(CreateDamageToThePlayer(objectName));
+        }
+
     }
 
     void OnTriggerExit(Collider objectName)
     {
-
+        /*
         //https://stackoverflow.com/questions/65455308/how-to-get-all-the-materials-assigned-to-a-gameobject-in-unity#:~:text=In%20Unity%2C%20we%20can%20get,get%20one%20material%20per%20GameObject.
         // Находим имя материала который прикреплён к объекту
         //Debug.Log(objectName.GetComponent<Renderer>().material.name);
@@ -63,6 +70,14 @@ public class PlayerCollisionThirdTrap : MonoBehaviour
 
         {
             objectName.GetComponent<Renderer>().material = ThirdTrap;
+        }
+        */
+
+        //Сравниваем по тегу - попали ли мы в ловушку 
+        if (objectName.tag == "ThirdTrap")
+        {
+            //Подсвечиваем плиту в соответсвиис условием
+            StartCoroutine(CreateDamageToThePlayer(objectName));
         }
     }
 

@@ -37,20 +37,23 @@ public class TestWorkWithBlock3by3 : MonoBehaviour
             {
                 k = 0;
             }
-            // Случайно отрисовываем ловушки
+            // Случайно отрисовываем ловушки и добавляем каждой клетке с ловушкой свой tag
             if (k == Random.Range(4, 8))
             {
                 hingeJoints[i].GetComponent<MeshRenderer>().material = Material1;
+                hingeJoints[i].tag = "FirstTrap";
             }
-            // Случайно отрисовываем ловушки
+            // Случайно отрисовываем ловушки и добавляем каждой клетке с ловушкой свой tag
             if (k == Random.Range(4, 8))
             {
                 hingeJoints[i].GetComponent<MeshRenderer>().material = WindTrap;
+                hingeJoints[i].tag = "SecondTrap";
             }
-            // Случайно отрисовываем ловушки
+            // Случайно отрисовываем ловушки и добавляем каждой клетке с ловушкой свой tag
             if (k == Random.Range(4, 8))
             {
                 hingeJoints[i].GetComponent<MeshRenderer>().material = ThirdTrap;
+                hingeJoints[i].tag = "ThirdTrap";
             }
 
         }
